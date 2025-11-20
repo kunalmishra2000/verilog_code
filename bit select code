@@ -1,0 +1,12 @@
+module tab;
+  bit[4:0]a;
+  initial begin
+    foreach(a[i])begin // it's bit select
+      a[2]=1;
+      a[0]=0;
+      a[3]=1;
+    end
+    foreach(a[i])
+      $display("a[%0d]=%b",i,a[i]);
+  end
+endmodule
