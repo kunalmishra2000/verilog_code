@@ -1,0 +1,15 @@
+// write code for scalar and vector 
+
+module tab;
+  wire scalar;
+  reg scalar1;
+  wire[1:0] vector;
+  reg[7:0] vector1;
+  
+  initial begin
+    $display("wire_scalar=%0d", $bits(scalar));
+    $display("reg_varibale_sclar=%0d", $bits(scalar1));
+    $display("wire_vari_vector=%0d", $bits(vector));
+    $display("reg_vari_vector=%0d", $bits(vector1));
+  end
+endmodule
