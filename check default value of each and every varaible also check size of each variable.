@@ -1,0 +1,27 @@
+// check default value of each and every varaible also check size of each variable.
+
+module tab;
+logic a;
+  bit b;
+  reg c;
+  wire d;
+  integer e;
+  realtime f;
+  time g;
+  real h;
+  
+  
+  
+  initial begin
+    $display("---------------- check default value of each variable and check size-----------------------------------");
+    $display("logic=%0d size=%0d",a, $bits(a));
+    $display("bit=%0d size =%0d",b,$bits(b));
+    $display("reg=%0d size=%0d",c,$bits(c));
+    $display("wire=%0d size=%0d",d, $bits(d));
+    $display("integer=%0d size=%0d",e, $bits(e));
+    $display("realtime=%0f size=%0d",f,$bits(f));
+    $display("time=%0t size=%0d",g,$bits(g));
+    $display("real=%0f size=%0d",h,$bit(h) );
+  
+  end
+endmodule
