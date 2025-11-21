@@ -1,0 +1,26 @@
+//fork join, fork join_any, fork join_none
+module tab;
+  
+  int data;
+  
+  initial begin
+    data=5;
+    $display("1 time=%0t data=%0d", $time,data);
+    fork 
+      data=8;
+      #15  $display("0 time=%0t data=%0d", $time,data);
+      begin
+      data=6; 
+     #20 $display("2 time=%0t data=%0d", $time,data);
+       data=7;
+    #30  $display("3 time=%0t data=%0d", $time,data);
+      end
+    join_any
+    //join
+     // join_none
+    //wait fork
+     disable fork;
+    $display("time=%0t Exist from fork ",$time);
+   
+  end
+endmodule 
