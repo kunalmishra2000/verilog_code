@@ -1,0 +1,25 @@
+// Code your testbench here
+// or browse Examples
+module tab;
+   int a = 897;
+   bit [11:0] bcd; // 3 digits × 4 bits each = 12 bits
+
+   function void find();
+      int temp;
+      logic [3:0] digit;
+      temp = a;
+      bcd = 0;  // clear BCD
+
+      while (temp > 0) begin
+         digit = temp % 10;        // get least significant decimal digit
+        bcd = (bcd << 4) +digit; // shift existing BCD left 4 bits and add new digit
+         $display("digit = %0d, BCD so far = %b", digit, bcd);
+         temp = temp / 10;         // remove last digit
+      end
+   endfunction
+
+   initial begin
+      find();
+      $display("Final BCD = %b", bcd); // final BCD
+   end
+endmodule
